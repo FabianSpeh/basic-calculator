@@ -49,6 +49,22 @@ body{
     gap: 4px;
     padding: 4px;
 }
+
+.row-1 .button{
+    background-color: #4BB3FD;
+}
+
+.button.operator{
+    background-color: #B084CC;
+}
+
+.button.operator.active {
+    background-color: #dba6fc;
+}
+
+.button.equals{
+    background-color: #B084CC;
+}
 /*.buttons{
     display: flex;
     justify-content: space-evenly;
