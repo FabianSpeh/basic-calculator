@@ -1,14 +1,27 @@
 let firstNumber = null;
 let secondNumber = null;
 let operator = "";
+let firstAction = true;
 
 const numberButtons = document.querySelectorAll(".number");
+const clearButton = document.querySelector(".clear");
 const input = document.querySelector(".input");
 
 numberButtons.forEach((button) => {
   button.addEventListener("click", function () {
-    input.textContent += button.textContent;
+    if (firstAction) {
+      input.textContent = "";
+      firstAction = false;
+    }
+    if (input.textContent.length <= 13) {
+      input.textContent += button.textContent;
+    }
   });
+});
+
+clearButton.addEventListener("click", function () {
+  input.textContent = "0";
+  firstAction = true;
 });
 
 const add = (number1, number2) => {
