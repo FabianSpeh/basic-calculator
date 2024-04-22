@@ -1,6 +1,15 @@
-let firstNumber = 0;
-let secondNumber = 0;
+let firstNumber = null;
+let secondNumber = null;
 let operator = "";
+
+const numberButtons = document.querySelectorAll(".number");
+const input = document.querySelector(".input");
+
+numberButtons.forEach((button) => {
+  button.addEventListener("click", function () {
+    input.textContent += button.textContent;
+  });
+});
 
 const add = (number1, number2) => {
   return number1 + number2;

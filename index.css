@@ -10,9 +10,11 @@ body{
 .calculator {
     width: 400px;
     height: 600px;
-    background-color: red;
+    background-color: black;
     display: flex;
     flex-direction: column;
+    border: 8px solid rgba(0, 128, 128, 0.452);
+    
     
 
 }
@@ -24,11 +26,28 @@ body{
     color: white;
     padding: 24px;
     font-size: 36px;
-    background-color: black;
+    background-color: rgb(88, 88, 88);
+    margin: 8px
 }
 
 
+.row-1, .row-2, .row-3, .row-4, .row-5{
+    display: flex;
+    justify-content: space-evenly;
+    flex: 1;
+    gap: 4px;
+
+}
+
 .buttons{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    flex: 1;
+    gap: 4px;
+    padding: 4px;
+}
+/*.buttons{
     display: flex;
     justify-content: space-evenly;
     flex: 1;
@@ -42,10 +61,11 @@ body{
     flex-direction: column;
     flex: 1;
     gap: 4px;
-}
+}*/
 
 .button{
-    border: 1px solid blue;
+    background-color: aquamarine;
+    border-radius: 8px;
     flex: 1;
     text-align: center;
     display: flex;
@@ -53,4 +73,10 @@ body{
     align-items: center;
     font-size: 26px;
     
+}
+
+.button.zero{
+
+    min-width: 49%;
+
 }
