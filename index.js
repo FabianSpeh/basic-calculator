@@ -1,11 +1,38 @@
+// 0 shouldnt be clickable as first number
+// implement decimals button
+// implement modulo button
+// implement factorial button
+
 let firstNumber = null;
 let secondNumber = null;
 let operator = "";
 let firstAction = true;
+let operatorActive = false;
 
 const numberButtons = document.querySelectorAll(".number");
 const clearButton = document.querySelector(".clear");
+const operatorButtons = document.querySelectorAll(".operator");
+const equalsButton = document.querySelector(".equals");
 const input = document.querySelector(".input");
+
+equalsButton.addEventListener("click", function () {
+  if (operatorActive) {
+    secondNumber = Number(input.textContent);
+    input.textContent =
+      Math.round(operate(firstNumber, secondNumber, operator) * 1000000000000) /
+      1000000000000;
+    operatorActive = false;
+  }
+});
+
+operatorButtons.forEach((button) => {
+  button.addEventListener("click", function () {
+    firstNumber = Number(input.textContent);
+    operator = button.textContent;
+    operatorActive = true;
+    firstAction = true;
+  });
+});
 
 numberButtons.forEach((button) => {
   button.addEventListener("click", function () {
@@ -16,12 +43,17 @@ numberButtons.forEach((button) => {
     if (input.textContent.length <= 13) {
       input.textContent += button.textContent;
     }
+    console.log(firstAction);
   });
 });
 
 clearButton.addEventListener("click", function () {
   input.textContent = "0";
   firstAction = true;
+  operatorActive = false;
+  firstNumber = null;
+  secondNumber = null;
+  operator = "";
 });
 
 const add = (number1, number2) => {
