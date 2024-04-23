@@ -43,7 +43,7 @@ equalsButton.addEventListener("click", function () {
 });
 
 undoButton.addEventListener("click", function () {
-  input.textContent = input.textContent.slice(0, -1);
+  input.textContent = input.textContent.slice(0, -1);   
 });
 
 // adds functionality to the operator buttons
